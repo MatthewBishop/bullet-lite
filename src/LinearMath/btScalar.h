@@ -142,7 +142,7 @@ inline int btIsDoublePrecision()
 	#endif //__MINGW32__
 
 	#ifdef BT_DEBUG
-		#ifdef _MSC_VER
+		#if defined(_MSC_VER) && !defined(__clang__)
 			#include <stdio.h>
 			#define btAssert(x) { if(!(x)){printf("Assert " __FILE__ ":%u (%s)\n", __LINE__, #x);__debugbreak();	}}
 		#else//_MSC_VER
@@ -338,7 +338,9 @@ inline int btIsDoublePrecision()
 			}
 		#endif
 
-
+		#if defined(__clang__)
+			#define BT_NO_SIMD_OPERATOR_OVERLOADS
+		#endif // clang
 
 	//use this, in case there are clashes (such as xnamath.h)
 	#ifndef BT_NO_SIMD_OPERATOR_OVERLOADS

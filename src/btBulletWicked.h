@@ -1,5 +1,10 @@
 /*
 All Bullet includes used by wiPhysics_Bullet.cpp
+
+#include "BulletSoftBody/btSoftBodyHelpers.h"
+#include "BulletSoftBody/btDefaultSoftBodySolver.h"
+#include "BulletSoftBody/btSoftRigidDynamicsWorld.h"
+#include "BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.h"
 */
 
 #ifndef BULLET_WICKED_H
